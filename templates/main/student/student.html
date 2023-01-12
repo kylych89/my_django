@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Студенты на сайте{% endblock %}
+
+
+{% block content %}
+<div class="features">
+    <h1>Студенты</h1>
+    {% if student %}
+    {% for el in student %}
+        <div class="alert alert-warning">
+            <h3>{{el.name}}</h3>
+            <p>{{el.surname}}</p>
+            <p>{{el.age}}</p>
+            <p>{{el.faculty}}</p>
+            <a href="{% url 'student:student-detail' el.id %}" class="btn btn-warning">Читать детальнее</a>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>У вас нет студенты!!!</p>
+    {% endif %}
+
+</div>
+{% endblock %}

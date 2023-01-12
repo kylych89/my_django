@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{student.name}}{% endblock %}
+
+
+{% block content %}
+<div class="features">
+    <h1>{{student.name}}</h1>
+    <p>{{student.surname}}</p>
+    <p>{{student.age}}</p>
+    <p>{{student.faculty}}</p>
+    <a href="{% url 'student:student-delete' student.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'student:student-update' student.id %}" class="btn btn-info">Редактировать</a>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Форма добавление Студента{% endblock %}
+
+
+{% block content %}
+<div class="features">
+    <h1>Форма добавление Студента</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.name}}<br>
+        {{form.surname}}<br>
+        {{form.age}}<br>
+        {{form.faculty}}<br>
+        <span>{{error}}</span>
+        <button class="btn btn-success" type="submit">Добавить</button>
+
+    </form>
+
+</div>
+{% endblock %}
