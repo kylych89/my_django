@@ -13,19 +13,50 @@
     <img src="{% static 'main/img/google.png' %}" alt="Лого">
     <span class="logo">My site</span>
     <ul>
-        <a href="{% url 'main:home' %}"><li><i class="fas fa-home"></i>Main</li></a>
-        <a href="{% url 'news:news_view' %}"><li><i class="fas fa-paper-plane"></i>News</li></a>
-        <a href="{% url 'student:student_view' %}"><li><i class="fas fa-paper-plane"></i>Student</li></a>
-        <a href="{% url 'main:about' %}"><li><i class="fas fa-address-card"></i>About</li></a>
-        <a href="{% url 'news:create_view' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Add news</button></li></a>
-        <a href="{% url 'student:create_student_view' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Student</button></li></a>
+        <a href="{% url 'main:home' %}">
+            <li><i class="fas fa-home"></i>Main</li>
+        </a>
+        <a href="{% url 'news:news_view' %}">
+            <li><i class="fas fa-paper-plane"></i>News</li>
+        </a>
+        <a href="{% url 'student:student_view' %}">
+            <li><i class="fas fa-paper-plane"></i>Student</li>
+        </a>
+        <a href="{% url 'student:faculty_view' %}">
+            <li><i class="fas fa-paper-plane"></i>Faculty</li>
+        </a>
+        <a href="{% url 'main:about' %}">
+            <li><i class="fas fa-address-card"></i>About</li>
+        </a>
+        <a href="{% url 'news:create_view' %}">
+            <li>
+                <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Add news</button>
+            </li>
+        </a>
+        <a href="{% url 'student:create_student_view' %}">
+            <li>
+                <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Student</button>
+            </li>
+        </a>
+        <a href="{% url 'student:create_faculty_view' %}">
+            <li>
+                <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Add Faculty</button>
+            </li>
+        </a>
     </ul>
 </aside>
-<a href="{% url 'account:logout' %}"><button>Logout</button></a>
 <main>
     {% block content %}
 
     {% endblock %}
+    <a href="{% url 'account:logout' %}">
+        <button>Logout</button>
+    </a>
+    <br>
+    <br>
+    <a href="{% url 'account:login' %}">
+        <button>Login</button>
+    </a>
 </main>
 </body>
 </html>

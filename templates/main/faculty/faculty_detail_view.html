@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{faculty.name}}{% endblock %}
+
+
+{% block content %}
+<div class="features">
+    <h1>{{faculty.name}}</h1>
+    <a href="{% url 'faculty:faculty-delete' faculty.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'faculty:faculty-update' faculty.id %}" class="btn btn-info">Редактировать</a>
+</div>
+{% endblock %}
