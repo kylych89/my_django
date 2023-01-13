@@ -1,5 +1,5 @@
 from django import forms
-from .models import Student, Faculty
+from .models import Student
 from django.forms import ModelForm, TextInput
 
 
@@ -27,20 +27,8 @@ class StudentForm(ModelForm):
                 'placeholder': 'Факультет'
             })
         }
-    faculty = forms.ModelMultipleChoiceField(
-            queryset=Faculty.objects.all(),
-            widget=forms.CheckboxSelectMultiple
-        )
+    # faculty = forms.ModelMultipleChoiceField(
+    #         queryset=Faculty.objects.all(),
+    #         widget=forms.CheckboxSelectMultiple
+    #     )
 
-
-class FacultyForm(ModelForm):
-    class Meta:
-        model = Faculty
-        fields = '__all__'
-
-        widgets = {
-            'name': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Имя'
-            })
-        }

@@ -12,7 +12,11 @@
         {{form.name}}<br>
         {{form.surname}}<br>
         {{form.age}}<br>
-        {{form.faculty}}<br>
+        <!--        {{form.faculty}}<br>-->
+        {% for el in faculty %}
+        <option value="{{faculty.id}}">{{faculty.name}}</option>
+
+        {% endfor %}
         <span>{{error}}</span>
         <button class="btn btn-success" type="submit">Добавить</button>
     </form>
